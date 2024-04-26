@@ -1,0 +1,17 @@
+name: toysrus-ern #on donne un nom(pas de maj,espace,caractere speciaux,privilegier '-'' pas le '_')
+recipe: lamp #on choisit la recette
+config:
+  php: '8.2'
+  webroot: . #on indique racine du projet
+  xdebug: 'develop,debug'
+
+services:
+  appserver:
+    config:
+      php: ./.lando.config/php.ini #on indique le chemin du fichier php.ini
+  database:
+    portforward: 3307 #on indique le port de la base de données
+    creds:
+      user: admin
+      password: admin
+      database: toysrus
